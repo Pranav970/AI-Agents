@@ -5,16 +5,16 @@
 
 <img width="1324" height="499" alt="image" src="https://github.com/user-attachments/assets/6592570c-33c0-455a-bf5c-3a44766d9b20" />
 
-REST API Design
-POST /urls – Create a short URL. Request JSON: { "original_url": "...", "custom_alias": "...", "expires_in": 3600 }. The server:
+# REST API Design:-
+* POST /urls – Create a short URL. Request JSON: { "original_url": "...", "custom_alias": "...", "expires_in": 3600 }. The server:
 
-Validates input (URL format, length).
+* Validates input (URL format, length).
 Generates or accepts a unique short code. If a custom_alias is provided and taken, returns 409 Conflict
 .
-Inserts a new record in Postgres and (optionally) caches it.
+* Inserts a new record in Postgres and (optionally) caches it.
 Returns 201 Created with JSON { "short_url": "https://short.ly/abc123", "short_code": "abc123", "expires_at": "2026-04-30T12:34:56Z" }
 .
-GET /{short_code} – Redirect to original URL. The server:
+* GET /{short_code} – Redirect to original URL. The server:
 
 Looks up the code in Redis; if found, returns a 302 Found redirect immediately.
 If not in cache, queries Postgres. If not found or expired, returns 404 Not Found.
