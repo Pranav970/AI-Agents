@@ -1,11 +1,11 @@
-## Executive Summary:- 
+# Executive Summary:- 
 * A scalable URL shortening service can be built with stateless Node.js servers behind a load balancer, a PostgreSQL database for persistence, and Redis for high-speed caching. Clients send long URLs via a POST /urls API, which generates a unique short code (e.g. using Base62 encoding of an ID or a random UUID), stores it in Postgres, and returns the short link. Redirect requests (GET /{code}) use Redis (cache-aside) for ultra-fast lookups, falling back to Postgres on cache miss
 . We enforce a UNIQUE index on the short_code in Postgres to guarantee no collisions
 . Expiry of links is handled via an expires_at column and a cleanup job. Rate limiting (e.g. per-IP on the POST endpoint) and analytics/event logging (e.g. write append-only clicks to a table or log) are added for robustness. Dockerfiles and a docker-compose.yml define services for Node, Postgres, and Redis (with environment variables via .env). A comprehensive test suite (unit, integration, end-to-end) ensures correctness. Key considerations (caching strategy, consistency trade-offs, security, performance targets) are addressed below, with actionable implementation steps and code samples.
 
 <img width="1324" height="499" alt="image" src="https://github.com/user-attachments/assets/6592570c-33c0-455a-bf5c-3a44766d9b20" />
 
-# REST API Design:-
+## REST API Design:-
 * POST /urls – Create a short URL. Request JSON: { "original_url": "...", "custom_alias": "...", "expires_in": 3600 }. The server:
 
 * Validates input (URL format, length).
