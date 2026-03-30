@@ -54,3 +54,20 @@ What to cache: Only the essential mapping short_code → original_url. Optionall
 
 * Why cache-aside? This pattern gives full control to the application
 . It is ideal for read-heavy workloads like redirects. By contrast, write-through (writing to cache & DB simultaneously) is simpler for writes but unnecessary here since reads dominate.
+
+
+<img width="824" height="457" alt="image" src="https://github.com/user-attachments/assets/a9d7b0a9-4cd5-45a7-8912-cfec7a1babfe" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
