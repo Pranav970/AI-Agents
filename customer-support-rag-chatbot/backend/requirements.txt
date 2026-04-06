@@ -1,1 +1,13 @@
-
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+chromadb
+sentence-transformers
+anthropic
+python-dotenv
+pymupdf
+python-docx
+pillow
+transformers
+torch
