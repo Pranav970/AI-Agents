@@ -34,3 +34,10 @@ This project is built for support knowledge bases and can be extended with:
 - hybrid retrieval
 - answer evaluation
 - feedback loop
+
+
+## Diagram:
+
+* Indexing process: document parsing, chunking, text/image indexing
+* Retrieval: embedding query + nearest neighbor search
+* Generation: prompt engineering + LLM + output guardrails
