@@ -41,3 +41,6 @@ This project is built for support knowledge bases and can be extended with:
 * Indexing process: document parsing, chunking, text/image indexing
 * Retrieval: embedding query + nearest neighbor search
 * Generation: prompt engineering + LLM + output guardrails
+
+
+<img width="400" height="450" alt="image" src="https://github.com/user-attachments/assets/2700c7ff-7c4b-45c6-b7f3-7f7e700bbec7" />
