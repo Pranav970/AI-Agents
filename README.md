@@ -1,5 +1,3 @@
-# AI-Agents
-
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=🤖%20AI%20Agents%20Hub&fontSize=70&animation=fadeIn&fontAlignY=38&desc=Next-Gen%20Reasoning,%20RAG,%20&%20Web%20Search%20Models&descAlignY=51&descAlign=62" alt="Header Banner"/>
 
